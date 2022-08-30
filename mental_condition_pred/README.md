@@ -27,12 +27,19 @@ Output: 1 (mental condition predicted) or 0 (healthy mental predicted)
 - After that: Comeback here and continue the following instruction for model deployment.
 
 ### Structure of project:
+
 model/: random forest model trained
+
 config.json: config file
-prreprocessing_module: preprocessing module for incoming data including encoder and scaling
+
+preprocessing_module: preprocessing module for incoming data including encoder and scaling
+
 pipeline_modules: module to define fields in input and output request and the object req which contains all the features that can be passed among modules
+
 model_module: use trained random forest model, predict mental_condition either 1 or 0
+
 model_serve: calling model_module and preprocessing_module to process input and do prediction
+
 predictor: Flask interface that calls model_serve to process input and return output
 
 ### To run the project, run following in terminal:
