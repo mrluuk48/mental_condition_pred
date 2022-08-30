@@ -1,0 +1,43 @@
+{
+  "model": {
+    "data":{
+      "all_col": ["HeartDisease", "BMI", "Smoking", "AlcoholDrinking", "Stroke",
+                   "PhysicalHealth", "DiffWalking", "Sex", "AgeCategory", "Race",
+                   "Diabetic", "PhysicalActivity", "GenHealth", "SleepTime", "Asthma",
+                   "KidneyDisease", "SkinCancer"],
+      "cat_columns": ["HeartDisease", "Smoking", "AlcoholDrinking", "Stroke", "DiffWalking", "Sex", "AgeCategory",
+                       "Race", "Diabetic", "PhysicalActivity", "GenHealth", "Asthma", "KidneyDisease", "SkinCancer"],
+      "X_cat": ["AgeCategory", "Race", "GenHealth", "Diabetic"],
+      "dummy_col": ["HeartDisease", "BMI", "Smoking", "AlcoholDrinking", "Stroke",
+       "PhysicalHealth", "DiffWalking", "Sex", "PhysicalActivity", "SleepTime",
+       "Asthma", "KidneyDisease", "SkinCancer", "AgeCategory_0",
+       "AgeCategory_1", "AgeCategory_2", "AgeCategory_3", "AgeCategory_4",
+       "AgeCategory_5", "AgeCategory_6", "AgeCategory_7", "AgeCategory_8",
+       "AgeCategory_9", "AgeCategory_10", "AgeCategory_11", "AgeCategory_12",
+       "Race_0", "Race_1", "Race_2", "Race_3", "Race_4", "Race_5",
+       "GenHealth_0", "GenHealth_1", "GenHealth_2", "GenHealth_3",
+       "GenHealth_4", "Diabetic_0", "Diabetic_1", "Diabetic_2", "Diabetic_3"]
+    }
+  },
+  "logger": {
+    "version": 1,
+    "formatters": {
+      "default": {
+        "format": "[%(asctime)s][%(process)s]: %(levelname)s in %(module)s: %(message)s"
+      }
+    },
+    "handlers": {
+      "wsgi": {
+        "class": "logging.StreamHandler",
+        "stream": "ext://flask.logging.wsgi_errors_stream",
+        "formatter": "default"
+      }
+    },
+    "root": {
+      "level": "INFO",
+      "handlers": [
+        "wsgi"
+      ]
+    }
+  }
+}
